@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
 
 
     // Read the map variable!
-    /*
+
     std::cout << "The map variable (directoryData)is displayed below ..." << std::endl;
     for(auto itr = directoryData.begin(); itr != directoryData.end(); ++itr){
         std::cout << '\t' << "Reading the file: " << itr->first << std::endl;
@@ -52,10 +52,6 @@ int main(int argc, char* argv[]) {
             }
         }
     }
-
-    */
-
-
 
     /*
      * Commenting for timebeing -
