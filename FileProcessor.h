@@ -37,8 +37,11 @@ public:
     // This will retrieve the private data member directoryPath
     std::string getDirectoryPath();
 
-    // Input operations
-    std::map<std::string, std::vector<std::ofstream>> readDirectory();
+    // File lines
+    int linesPerFile(const std::string fileName);
+
+    // Input operations - write out a map containing vector of vectors
+    std::map<std::string, std::vector<std::vector<std::string>>> readDirectory();
 
     // Output operations
     void writeDirectory();
