@@ -1,0 +1,11 @@
+#include<fstream>
+
+// How to write data to filesystem
+
+/* Vector containing the partition output files. */
+std::vector<std::ofstream> outputFiles(numOfPartitions);
+
+/* Create files for each partition */
+for(int partition = 0; partition < numOfPartitions; ++partition){
+    outputFiles[partition].open(fileDirectory + '/' + fileName + '.' + std::to_string(partition));
+ }
