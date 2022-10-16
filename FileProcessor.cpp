@@ -4,6 +4,7 @@
 
 #include "FileProcessor.h"
 #include<iostream>
+#include<math.h>
 #include<string>
 #include<filesystem>
 #include <fstream>
@@ -48,7 +49,7 @@ std::string FileProcessor::getDirectoryPath() {
     return this->directoryPath;
 }
 
-int FileProcessor::linesPerFile(const std::string fileName) {
+int FileProcessor::linesPerFile(const std::string &fileName) {
     // Read the file as an input stream
     std::ifstream inputFile(fileName);
     // Initialize the total lines per file
@@ -80,31 +81,36 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
     if(!directoryFiles.empty()){
         // let's iterate each file!
         for(auto i=0; i < directoryFiles.size(); i++){
-            // Number of partitions
-            int numPartitions = 8;
-
             // Declare a vector of vectors that contain strings - this is unique per file!
             std::vector<std::vector<std::string>> vecFile;
 
             // Read the file as an input stream
             std::ifstream inputFile(directoryFiles[i]);
 
+            std::string &refFile = directoryFiles[i];
+
             // Declare a string for each line in the file
             std::string fileLine;
 
             // Find the number of lines per file
-            int numLinesPerFile = linesPerFile(directoryFiles[i]);
+            int numLinesPerFile = linesPerFile(refFile);
 
             // Determine number of lines per partition
-            int numLinesPerPartition = numLinesPerFile/numPartitions;
+            int numLinesPerPartition = 500;
 
-            std::cout << numLinesPerPartition << std::endl;
+            // Determine number of partitions per file
+            int numPartitionsPerFile = ceil(numLinesPerFile/double(numLinesPerPartition));
+
+            std::cout << "Properties for " << refFile << std::endl;;
+            std::cout << "Number of lines: " << numLinesPerFile << std::endl;
+            std::cout << "Number of lines per partition: " << numLinesPerPartition << std::endl;
+            std::cout << "NUmber of partitions per file: " << numPartitionsPerFile << std::endl;
 
             // Represent the current line number
             int currentLine = 0;
 
             // Initialize partition
-            int partition = 0;
+            int partition = 1;
 
             // Preemptively declare a vector of strings
             std::vector<std::string> simpleVec;
@@ -117,13 +123,24 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
                 ++currentLine;
                 // if the lines falls outside the partition, then we need to push it to a new partition!
                 // @Hal / @Abraham - there is a bug here ?
-                if(currentLine >= (partition + 1) * numLinesPerPartition && partition < numPartitions -1){
+                //std::cout << "(partition:"<< partition <<")," << "(currentLine:" << currentLine <<")" << std::endl;
+                if(currentLine >= (partition) * numLinesPerPartition && partition < numPartitionsPerFile){
+                    //std::cout << "Within the IF block" << std::endl;
+                    //std::cout << "(partition:"<< partition <<")," << "(currentLine:" << currentLine <<")" << std::endl;
                     // increase the partition count
                     ++partition;
+                    //std::cout << "(increased partition:"<< partition <<")" << std::endl;
                     // push it to ioFiles (the vector of string vectors)
                     vecFile.push_back(simpleVec);
                     // recreate the simple vector
-                    std::vector<std::string> simpleVec;
+                    simpleVec.clear();
+                } else if (currentLine == numLinesPerFile && partition == numPartitionsPerFile){
+                    // std::cout << "Will it come here ?" << std::endl;
+                    // this is the last partition!
+                    // push it to ioFiles (the vector of string vectors)
+                    vecFile.push_back(simpleVec);
+                } else {
+                    // do nothing for all other lines
                 }
             }
             // Insert into map - this contains all data for that one file!
