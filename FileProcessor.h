@@ -38,7 +38,7 @@ public:
     std::string getDirectoryPath();
 
     // File lines
-    int linesPerFile(const std::string fileName);
+    int linesPerFile(const std::string &fileName);
 
     // Input operations - write out a map containing vector of vectors
     std::map<std::string, std::vector<std::vector<std::string>>> readDirectory();
