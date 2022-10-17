@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.23)
 project(scratchStuff)
-
+set(Boost_INCLUDE_DIR /home/sakkammadam/CLionProjects/boost_libs/alldeps_v1.80.0/include/)
+set(Boost_LIBRARY_DIR /home/sakkammadam/CLionProjects/boost_libs/alldeps_v1.80.0/lib/)
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(scratchStuff main.cpp FileProcessor.cpp FileProcessor.h)
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+include_directories(${Boost_INCLUDE_DIR})
+add_executable(scratchStuff main.cpp FileProcessor.cpp FileProcessor.h Mapper.cpp Mapper.h)
