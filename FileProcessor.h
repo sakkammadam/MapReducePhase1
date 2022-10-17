@@ -4,6 +4,26 @@
 
 #ifndef SCRATCHSTUFF_FILEPROCESSOR_H
 #define SCRATCHSTUFF_FILEPROCESSOR_H
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+///    FileProcessor.h - handles file processing actions                                          ///
+///    v0.1                                                                                       ///
+///    Language: C++, Clion 2022.2.4                                                              ///
+///    Platform: Ubuntu 20.04 LTS                                                                 ///
+///    Author: Sooraj Akkammadam                                                                  ///
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * Package Introduction:
+ * ---------------------------------------------------------------
+ * This package provides the interface for the FileProcessor class
+ * ---------------------------------------------------------------
+ * Package Operations:
+ *  Explain each method
+ *
+ * Build Process:
+ * ----------------
+ *  Required Files: FileProcessor.h, FileProcessor.cpp
+ *
+ */
 
 #include<string>
 #include <map>
@@ -21,7 +41,7 @@ public:
     FileProcessor();
 
     // Initialization constructor
-    FileProcessor(const std::string &operation, const std::string &directory_path);
+    explicit FileProcessor(const std::string &operation, const std::string &directory_path);
 
     // Setter methods
     // This will set the FileProcessor's desired operation in private data member directoryOperation
