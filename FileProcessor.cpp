@@ -4,10 +4,10 @@
 
 #include "FileProcessor.h"
 #include<iostream>
-#include<math.h>
+#include<cmath>
 #include<string>
 #include<filesystem>
-#include <fstream>
+#include<fstream>
 
 
 // Default Constructor
@@ -22,6 +22,7 @@ FileProcessor::FileProcessor(const std::string &operation, const std::string &di
     setOperation(operation);
     // Set Directory path - will raise error if the path is not present in the file system
     setDirectoryPath(directory_path);
+    // Entry method - to be added
 }
 
 void FileProcessor::setOperation(const std::string &operation) {
@@ -96,7 +97,7 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
             // Determine number of partitions per file
             int numPartitionsPerFile = ceil(numLinesPerFile/double(numLinesPerPartition));
             // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
-            std::cout << "Properties for " << refFile << std::endl;;
+            std::cout << "Properties for " << refFile << std::endl;
             std::cout << "Number of lines: " << numLinesPerFile << std::endl;
             std::cout << "Number of lines per partition: " << numLinesPerPartition << std::endl;
             std::cout << "NUmber of partitions per file: " << numPartitionsPerFile << std::endl;
