@@ -83,67 +83,53 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
         for(auto i=0; i < directoryFiles.size(); i++){
             // Declare a vector of vectors that contain strings - this is unique per file!
             std::vector<std::vector<std::string>> vecFile;
-
             // Read the file as an input stream
             std::ifstream inputFile(directoryFiles[i]);
-
+            // Create a reference variable against the file name
             std::string &refFile = directoryFiles[i];
-
             // Declare a string for each line in the file
             std::string fileLine;
-
             // Find the number of lines per file
             int numLinesPerFile = linesPerFile(refFile);
-
-            // Determine number of lines per partition
+            // Set the number of lines per partition
             int numLinesPerPartition = 500;
-
             // Determine number of partitions per file
             int numPartitionsPerFile = ceil(numLinesPerFile/double(numLinesPerPartition));
-
+            // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
             std::cout << "Properties for " << refFile << std::endl;;
             std::cout << "Number of lines: " << numLinesPerFile << std::endl;
             std::cout << "Number of lines per partition: " << numLinesPerPartition << std::endl;
             std::cout << "NUmber of partitions per file: " << numPartitionsPerFile << std::endl;
-
+            // TO DO - the above 4 lines should be pushed to log
             // Represent the current line number
             int currentLine = 0;
-
             // Initialize partition
             int partition = 1;
-
             // Preemptively declare a vector of strings
             std::vector<std::string> simpleVec;
-
-            // Parse the file -
+            // Parse the file line by line!
             while(std::getline(inputFile, fileLine)){
                 // push each line into the vector of strings
                 simpleVec.push_back(fileLine);
                 // increment the currentLine variable
                 ++currentLine;
                 // if the lines falls outside the partition, then we need to push it to a new partition!
-                // @Hal / @Abraham - there is a bug here ?
-                //std::cout << "(partition:"<< partition <<")," << "(currentLine:" << currentLine <<")" << std::endl;
                 if(currentLine >= (partition) * numLinesPerPartition && partition < numPartitionsPerFile){
-                    //std::cout << "Within the IF block" << std::endl;
-                    //std::cout << "(partition:"<< partition <<")," << "(currentLine:" << currentLine <<")" << std::endl;
                     // increase the partition count
                     ++partition;
-                    //std::cout << "(increased partition:"<< partition <<")" << std::endl;
                     // push it to ioFiles (the vector of string vectors)
                     vecFile.push_back(simpleVec);
-                    // recreate the simple vector
+                    // clear the simple vector so that we can start covering for the next partition!
                     simpleVec.clear();
                 } else if (currentLine == numLinesPerFile && partition == numPartitionsPerFile){
-                    // std::cout << "Will it come here ?" << std::endl;
-                    // this is the last partition!
+                    // this is to cover for the last partition!
                     // push it to ioFiles (the vector of string vectors)
                     vecFile.push_back(simpleVec);
                 } else {
                     // do nothing for all other lines
                 }
             }
-            // Insert into map - this contains all data for that one file!
+            // Insert into map - this contains all data broken down in partitions (lines) for one file!
             directoryData.insert({directoryFiles[i], vecFile});
         }
     } else {
@@ -151,6 +137,16 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
     }
     // Send final output
     return directoryData;
+}
+
+// Not set up yet!
+void FileProcessor::writeDirectory() {
+    // Will pick this up after mapper class
+}
+
+// Not set up yet!
+void FileProcessor::entryMethod() {
+    // Will pick this up after mapper class
 }
 
 

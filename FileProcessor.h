@@ -43,10 +43,10 @@ public:
     // Input operations - write out a map containing vector of vectors
     std::map<std::string, std::vector<std::vector<std::string>>> readDirectory();
 
-    // Output operations
+    // Output operations TODO
     void writeDirectory();
 
-    // Entry method
+    // Entry method TODO
     void entryMethod();
 
 
