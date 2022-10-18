@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <map>
+#include <tuple>
 #include <vector>
 #include "FileProcessor.h"
 #include "Mapper.h"
@@ -41,18 +42,18 @@ int main(int argc, char* argv[]) {
     std::map<std::string, std::vector<std::vector<std::string>>> directoryData = testingFoo.readDirectory();
 
     // declare a peek vector
-    std::vector<std::map<std::string, std::vector<std::map<std::string, int>>>> peek;
+    std::vector<std::map<std::string, std::vector<std::tuple<std::string, int, int>>>> peek;
 
     // Read the map variable! and confirm the data is represented correctly!
     std::cout << "The map variable (directoryData)is displayed below ..." << std::endl;
     for(auto itr = directoryData.begin(); itr != directoryData.end(); ++itr){
         std::cout << '\t' << "Reading the file: " << itr->first << std::endl;
         std::cout << '\t' << "It has " << (itr->second).size() << " partitions" << std::endl;
-        for(auto i=0; i < itr->second.size(); i++){
+        for(int i=0; i < itr->second.size(); i++){
             std::cout << "Partition#" << i << std::endl;
             for(auto j=0; j < itr->second[i].size(); j++){
-                Mapper testingBar(itr->first, itr->second[i][j], testingFoo.getDirectoryPath());
-                std::map<std::string, std::vector<std::map<std::string, int>>> hope = testingBar.mapOperations();
+                Mapper testingBar(itr->first, itr->second[i][j], testingFoo.getDirectoryPath(), i);
+                std::map<std::string, std::vector<std::tuple<std::string, int, int>>> hope = testingBar.mapOperations();
                 peek.push_back(hope);
                 //std::cout << "\t\t" << itr->second[i][j] << std::endl;
             }
@@ -61,16 +62,16 @@ int main(int argc, char* argv[]) {
 
     // Let's iterate over the peek
     for(const auto &item:peek){
-        //std::cout << "Reading from peek (result of Mapper)" << std::endl;
+        std::cout << "Reading from peek (result of Mapper)" << std::endl;
         for(const auto &row: item){
-            //std::cout << "The file is " << row.first << std::endl;
-            for(const auto &bar: row.second){
-                for(const auto &argh:bar){
-                    std:: cout << argh.first << ',' << argh.second << std::endl;
-                }
+            std::cout << "The file is " << row.first << std::endl;
+            for(const auto bar: row.second){
+                std::cout << "Token Data: (" << std::get<0>(bar) << ',' << std::get<1>(bar)
+                        << ')' << " belonging to partition#" << std::get<2>(bar) << std::endl;
             }
         }
     }
 
+    // end
     return 0;
 }
