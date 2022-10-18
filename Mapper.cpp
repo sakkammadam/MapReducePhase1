@@ -3,25 +3,37 @@
 //
 
 #include "Mapper.h"
-#include<string>
-#include<filesystem>
-#include<vector>
-#include<map>
+#include <string>
+#include <filesystem>
+#include <vector>
+#include <map>
+#include <tuple>
 #include <boost/algorithm/string.hpp>
 
 // Default constructor
-Mapper::Mapper():inputFileName{" "},inputFileLine{" "},tempDirectory{" "} {
+Mapper::Mapper():inputFileName{" "},inputFileLine{" "},tempDirectory{" "},linePartitionNumber{} {
     // Nothing in the body of the default constructor
     // Note that we have set the private data members as blank!
 }
 
-Mapper::Mapper(const std::string &input_file, const std::string &input_line, const std::string &temp_directory) {
+Mapper::Mapper(
+        // The originating input file name with fully qualified path
+        const std::string &input_file,
+        // A line within the file which we are trying to standardize and tokenize
+        const std::string &input_line,
+        // temporary directory where we would like to store mapped data
+        const std::string &temp_directory,
+        // originating partition number the line belongs to
+        int partition_line_number
+        ) {
     // Call input file name setter
     setInputFileName(input_file);
     // Call input line setter
     setInputFileLine(input_line);
     // Call temporary directory setter
     setTempDirectory(temp_directory);
+    // Call line partition number setter
+    setLinePartitionNumber(partition_line_number);
     // Entry method - to be added
 }
 
@@ -55,6 +67,12 @@ void Mapper::setTempDirectory(const std::string &temp_directory) {
     }
 }
 
+// This will set the linePartitionNumber private data member within the Mapper object
+void Mapper::setLinePartitionNumber(int partitionLine) {
+    this->linePartitionNumber = partitionLine;
+
+}
+
 // Getters
 // This will retrieve the inputFileName private data member
 std::string Mapper::getInputFileName() {
@@ -69,6 +87,11 @@ std::string Mapper::getInputFileLine() {
 // This will retrieve the tempDirectory private data member
 std::string Mapper::getTempDirectory() {
     return this->tempDirectory;
+}
+
+// This will retrieve the linePartitionNumber private data member
+int Mapper::getLinePartitionNumber() {
+    return this->linePartitionNumber;
 }
 
 // Cleanup methods -
@@ -97,9 +120,11 @@ std::string Mapper::lowerRemovePunc(const std::string &wholeString) {
 
 // This method will tokenize a line and return a vector containing maps of tokens
 // expects a cleaned up line
-std::vector<std::map<std::string, int>> Mapper::tokenize(const std::string &cleanedUpString) {
+std::vector<std::tuple<std::string, int, int>> Mapper::tokenize(const std::string &cleanedUpString, int linePartitionNum) {
+    // default 1 integer
+    int defOne = 1;
     // declare a vector containing maps of tokens
-    std::vector<std::map<std::string, int>>  tokens;
+    std::vector<std::tuple<std::string, int, int>>  tokens;
     // leverage stringstream to read string as a stream which will be piped into another string using getline
     std::stringstream baseLine(cleanedUpString);
     // declare a token representing each word within a stream
@@ -109,11 +134,11 @@ std::vector<std::map<std::string, int>> Mapper::tokenize(const std::string &clea
         // empty check is to handle the edge case where there were multiple spaces
         if(!token.empty()){
             // declare a map
-            std::map<std::string, int> tempMap;
-            // insert into tempMap the token
-            tempMap.insert({token, 1});
+            std::tuple<std::string, int, int> tempTuple;
+            // insert into tempTuple the token, 1, and originating line's partition number
+            tempTuple = std::make_tuple(token, defOne, linePartitionNum);
             // push into the tokens vector
-            tokens.push_back(tempMap);
+            tokens.push_back(tempTuple);
         }
     }
     // return tokens vector
@@ -122,18 +147,17 @@ std::vector<std::map<std::string, int>> Mapper::tokenize(const std::string &clea
 
 // Primary Mapper Operations!
 // This method will internally call - 1) lowerRemovePunc and 2) tokenize method
-std::map<std::string, std::vector<std::map<std::string, int>>> Mapper::mapOperations() {
+std::map<std::string, std::vector<std::tuple<std::string, int, int>>> Mapper::mapOperations() {
     // let's cleanup the original string by creating a copy - see lowerRemovePunc method
-    std::string cleanedUpString = lowerRemovePunc(this->inputFileLine);
+    std::string cleanedString = lowerRemovePunc(getInputFileLine());
     // let's create a vector containing maps of tokens from the cleaned up string
-    std::vector<std::map<std::string, int>> stringTokens = tokenize(cleanedUpString);
+    std::vector<std::tuple<std::string, int, int>> stringTokens = tokenize(cleanedString, getLinePartitionNumber());
     // A map that maps the original file name and associated line, which has been converted to vector of token maps
-    std::map<std::string, std::vector<std::map<std::string, int>>> fileLineTokenMapper;
+    std::map<std::string, std::vector<std::tuple<std::string, int, int>>> fileLineTokenMapper;
     // Let's insert into the above map
-    fileLineTokenMapper.insert({this->inputFileName, stringTokens});
+    fileLineTokenMapper.insert({getInputFileName(), stringTokens});
     // return it so that it can be used later
     return fileLineTokenMapper;
 }
-
 
 
