@@ -11,67 +11,32 @@ int main(int argc, char* argv[]) {
     // Declare the file being processed
     //char* filePathBase = argv[1];
     //std::string filePath(filePathBase);
-    /*
-    // Please ignore !
-    std::string filePath = "/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AsYouLIkeIte.txt";
-    std::cout << "Processing file: " << filePath << std::endl;
-    std::cout << "File directory: " << filePath.substr(0,filePath.rfind('/')+1) << std::endl;
-    std::cout << "File name: " << filePath.substr(filePath.rfind('/')+1) << std::endl;
 
-    std::string fileDirectory = filePath.substr(0,filePath.rfind('/')+1);
-    std::string fileName = filePath.substr(filePath.rfind('/')+1);
-    */
-
-    //FileProcessor
-    /*
-    auto testing = new FileProcessor("input",
-                                     "/home/sakkammadam/Documents/syr/cse687/projects/input_files/sample/AsYouLIkeIte.txt"
-    );
-    */
-
-    // Create a testing object called testingFoo
+    // Create a testing object called testingFoo -- the directory path should be filePath - line #13
     FileProcessor testingFoo(
             "input",
-            "/home/sakkammadam/Documents/syr/cse687/projects/input_files/sample"
+            "/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare"
             );
 
     // Retrieve private data members - directory and requested operation (input)
-    std::cout << testingFoo.getDirectoryPath() << std::endl;
+    std::cout << testingFoo.getInputDirectoryPath() << std::endl;
     std::cout << testingFoo.getOperation() << std::endl;
     // Create a variable that will host all data that is present along the path
     std::map<std::string, std::vector<std::vector<std::string>>> directoryData = testingFoo.readDirectory();
 
     // declare a peek vector
-    std::vector<std::map<std::string, std::vector<std::tuple<std::string, int, int>>>> peek;
+    std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> peek;
 
     // Read the map variable! and confirm the data is represented correctly!
-    std::cout << "The map variable (directoryData)is displayed below ..." << std::endl;
-    for(auto itr = directoryData.begin(); itr != directoryData.end(); ++itr){
-        std::cout << '\t' << "Reading the file: " << itr->first << std::endl;
-        std::cout << '\t' << "It has " << (itr->second).size() << " partitions" << std::endl;
-        for(int i=0; i < itr->second.size(); i++){
-            std::cout << "Partition#" << i << std::endl;
-            for(auto j=0; j < itr->second[i].size(); j++){
-                Mapper testingBar(itr->first, itr->second[i][j], testingFoo.getDirectoryPath(), i);
-                std::map<std::string, std::vector<std::tuple<std::string, int, int>>> hope = testingBar.mapOperations();
-                peek.push_back(hope);
-                //std::cout << "\t\t" << itr->second[i][j] << std::endl;
-            }
-        }
-    }
+    Mapper mapTest(directoryData);
+    peek = mapTest.mapOperations();
 
-    // Let's iterate over the peek
-    for(const auto &item:peek){
-        std::cout << "Reading from peek (result of Mapper)" << std::endl;
-        for(const auto &row: item){
-            std::cout << "The file is " << row.first << std::endl;
-            for(const auto bar: row.second){
-                std::cout << "Token Data: (" << std::get<0>(bar) << ',' << std::get<1>(bar)
-                        << ')' << " belonging to partition#" << std::get<2>(bar) << std::endl;
-            }
-        }
-    }
+    // Create a File Processor object that will write output of Mapper class to disk
+    FileProcessor testingMap2Disk("mapper",peek);
+    std::string tempDirectory = testingMap2Disk.writeDirectory();
 
-    // end
+    // Please log this - @Hal, @Abraham - TODO
+    std::cout << "Output of Mapper operations have been written to " << tempDirectory << std::endl;
+
     return 0;
 }
