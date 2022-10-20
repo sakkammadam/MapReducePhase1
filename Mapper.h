@@ -14,10 +14,7 @@
 class Mapper {
 // Private data members
 private:
-    std::string inputFileName;
-    std::string inputFileLine;
-    std::string tempDirectory;
-    int linePartitionNumber;
+    std::map<std::string, std::vector<std::vector<std::string>>> processedDirectory;
 
     //
 public:
@@ -26,55 +23,38 @@ public:
 
     // Initialization Constructor
     explicit Mapper(
-            // The originating input file name with fully qualified path
-            const std::string &input_file,
-            // A line within the file which we are trying to standardize and tokenize
-            const std::string &input_line,
-            // temporary directory where we would like to store mapped data
-            const std::string &temp_directory,
-            // originating partition number the line belongs to
-            int partition_line_number
+            // Get the processed directory object
+            const std::map<std::string, std::vector<std::vector<std::string>>> &processed_directory
             );
 
     // Setters
-    // This will set the inputFileName private data member within the Mapper object
-    void setInputFileName(const std::string &input_file);
-
-    // This will set the inputFileLine private data member within the Mapper object
-    void setInputFileLine(const std::string &input_line);
-
-    // This will set the tempDirectory private data member within the Mapper object
-    void setTempDirectory(const std::string &temp_directory);
-
-    // This will set the linePartitionNumber private data member within the Mapper object
-    void setLinePartitionNumber(int partition_line_number);
+    // This will set the processedDirectory private data member within the Mapper object
+    void setProcessedDirectory(const std::map<std::string, std::vector<std::vector<std::string>>> &processed_directory);
 
     // Getters
-    // This will retrieve the inputFileName private data member
-    std::string getInputFileName();
+    // This will retrieve the processedDirectory private data member within the Mapper object
+    std::map<std::string, std::vector<std::vector<std::string>>> getProcessedDirectory();
 
-    // This will retrieve the inputFileLine private data member
-    std::string getInputFileLine();
-
-    // This will retrieve the tempDirectory private data member
-    std::string getTempDirectory();
-
-    // This will retrieve the linePartitionNumber private data member
-    int getLinePartitionNumber();
-
+    // Cleanup methods -
+    // 1) lowerRemovePunc - This method will lowercase and remove punctuations, essentially standardize a line
+    // 2) tokenize - This method will tokenize a line and return a vector of tokens - expects a cleaned up line
 
     // This method will lowercase and remove punctuations - standardize a line
     std::string lowerRemovePunc(const std::string &wholeString);
 
     // This method will tokenize a line and return a vector of tokens within tuples- expects a standardized line
     // Each tuple will contain token, integer(1), partition# the originating line belonged to
-    std::vector<std::tuple<std::string, int, int>> tokenize(const std::string &cleanedUpString, int linePartitionNum);
+    std::vector<std::tuple<std::string, int, int>> tokenize(const std::string &cleanedUpString, size_t linePartitionNum);
 
     // Primary Map method
     // It will read a line and tokenize the line into individual words
-    // The method will create a map containing the originating file name and a vector of maps
+    // The method will create a vector of tuples from a line
     // Each map will contain a word and the occurrence of that word (1)
-    std::map<std::string, std::vector<std::tuple<std::string, int, int>>> mapOperations();
+    std::vector<std::tuple<std::string, int, int>> mapLine(const std::string &fileLine, size_t partitionNum);
+
+    // Overarching MapOperations method that acts against all lines of a file
+    std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mapOperations();
+
 
 
 
