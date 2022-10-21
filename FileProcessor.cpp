@@ -25,7 +25,6 @@ FileProcessor::FileProcessor(const std::string &operation, const std::string &di
     this->setOperation(operation);
     // Set Directory path - will raise error if the path is not present in the file system
     this->setInputDirectoryPath(directory_path);
-    // Entry method - to be added - the entry method in this CTOR should fall into the input path!
 }
 
 // Constructor used in conjunction with mapper operations
@@ -38,13 +37,23 @@ FileProcessor::FileProcessor(
     this->setOperation(operation);
     // Set mapper Data private data member
     this->setMapperData(map_result);
-    // Entry method - to be added - the entry method for this CTOR should fall into the mapper path!
+}
+
+// Initialization constructor - used primarily for shuffler operations
+FileProcessor::FileProcessor(
+        const std::string &operation,
+        const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result
+        ) {
+    // Set operation - will raise error if the value is incorrect
+    this->setOperation(operation);
+    // Set shuffler Data private data member
+    this->setShufflerData(shuffle_result);
 }
 
 // Setter methods
 // This will set the FileProcessor's desired operation in private data member directoryOperation
 void FileProcessor::setOperation(const std::string &operation) {
-    if(operation == "input" || operation == "mapper" || operation == "sorter" || operation == "output"){
+    if(operation == "input" || operation == "mapper" || operation == "shuffler" || operation == "reducer"){
         this->directoryOperation = operation;
     } else{
         throw std::runtime_error("Unsupported operation!: " + operation );
@@ -66,6 +75,13 @@ void FileProcessor::setMapperData( const std::map<std::string, std::vector<std::
     this->mapperData = map_result;
 }
 
+// This will set the FileProcessor's shuffler data private data member
+void FileProcessor::setShufflerData(
+        const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result) {
+    this->shufflerData = shuffle_result;
+
+}
+
 // Getter methods
 // This will retrieve the private data member directoryOperation
 std::string FileProcessor::getOperation() {
@@ -80,6 +96,11 @@ std::string FileProcessor::getInputDirectoryPath() {
 // This will retrieve the mapper data private data member
 std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> FileProcessor::getMapperData() {
     return this->mapperData;
+}
+
+// This will retrieve the shuffler data private data member
+std::vector<std::map<std::string, std::map<std::string, size_t>>> FileProcessor::getShufflerData() {
+    return this->shufflerData;
 }
 
 // This method will determine the number of lines per file used in conjunction with readDirectory method
@@ -174,78 +195,126 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
     return directoryData;
 }
 
+// Output operations
+
+// This method will create necessary directory paths
+void FileProcessor::createDirectory(const std::string &directoryPath) {
+    std::filesystem::path shufflePath(directoryPath);
+    if (std::filesystem::exists(directoryPath)) {
+        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
+        std::cout << "The " << this->getOperation() <<  " directory: " << directoryPath << " already exists! " << std::endl;
+    } else {
+        // create directory!
+        std::filesystem::create_directories(directoryPath);
+        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
+        std::cout << "Created the " << this->getOperation() << " directory: " << directoryPath << std::endl;
+    }
+}
+
+// This method will write the outputs of Mapper Operations - it will return the directory of temp_mapper
+std::string FileProcessor::writeMapperOutputs() {
+    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
+    std::cout << "Proceeding to write Mapper data output to file system...." << std::endl;
+    // Declare variable mapData
+    // Key -> FileName
+    // Value -> Vector containing tuples -> (Token, 1, Originating Partition the token (line belonged to)
+    std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mapData = this->getMapperData();
+    // Declare tempDirectory
+    std::string rootTempDirectory;
+    // We will be iterating over the mapData map
+    for (const auto &itr: mapData) {
+        std::string fullyQualifiedFileName = itr.first;
+        std::string fileDirectory = fullyQualifiedFileName.substr(0, fullyQualifiedFileName.rfind('/') + 1);
+        rootTempDirectory = fileDirectory + "temp_mapper/";
+        std::string baseFileName = fullyQualifiedFileName.substr(fullyQualifiedFileName.rfind('/') + 1);
+        std::string tempDirectory = rootTempDirectory + baseFileName + "/";
+        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
+        std::cout << "Operating on Mapper output from " << fullyQualifiedFileName << std::endl;
+        std::cout << "Originating directory: " << fileDirectory << std::endl;
+        std::cout << "Creating a temp directory to host mapper output: " << tempDirectory << std::endl;
+        // The above three lines should be logged
+        // Creating temp directory if temp directory is not there already
+        this->createDirectory(tempDirectory);
+        // Let's iterate over the entire mapper data going against each partition
+        for (size_t partition = 0; partition < itr.second.size(); ++partition) {
+            // we will process all data within partition vector by writing to a file
+            // declare an ostream
+            std::ofstream outputFile;
+            // create an empty file against the temp directory
+            outputFile.open(tempDirectory + baseFileName + "." + std::to_string(partition));
+            // iterate over each partition vector
+            for (const auto &segment: itr.second[partition]) {
+                //outputFile << std::get<0>(itr.second[partition]) << std::endl;
+                for (const auto &token: segment) {
+                    std::string prepRow = '(' +
+                                          std::get<0>(token) + ',' +
+                                          std::to_string((char) std::get<1>(token)) + ')';
+                    outputFile << prepRow << std::endl;
+                }
+            }
+            // close the output file
+            outputFile.close();
+        }
+    }
+    // return the root temp directory
+    return rootTempDirectory;
+}
+
+// This method will write the outputs of Shuffle Operations - it will return the directory of temp_shuffler
+std::string FileProcessor::writeShuffleOutputs() {
+    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
+    std::cout << "Proceeding to write Shuffle data output to file system...." << std::endl;
+    // Shuffle data
+    std::vector<std::map<std::string, std::map<std::string, size_t>>> shuffleData = this->getShufflerData();
+    // Shuffle parent path
+    std::string shuffleParentPath;
+    // Let's iterate over each map item in the vector
+    for(const auto& shufflePartition:shuffleData){
+        // let's read corresponding map
+        for(const auto &shufflePartitionDetails:shufflePartition){
+            // this is the shuffle directory associated
+            std::string shuffleDirectory = shufflePartitionDetails.first.substr(0, shufflePartitionDetails.first.rfind('/') + 1);
+            // capturing the parent path
+            shuffleParentPath = std::filesystem::path(shuffleDirectory).parent_path().string();
+            // We need to check if directory exists. if it doesn't - create the directory, else don't do anything
+            // Creating shuffle directory if shuffle directory is not there already
+            this->createDirectory(shuffleDirectory);
+            // @Hal, @Abraham - please log this! TODO! - should be pushed to log files
+            std::cout << "Proceeding to create " << shufflePartitionDetails.first << std::endl;
+            // declare an ostream
+            std::ofstream outputFile;
+            // create an empty file against the temp directory
+            outputFile.open(shufflePartitionDetails.first);
+            // let's iterate over the map
+            for(const auto &tokenDetails:shufflePartitionDetails.second){
+                std::string prepRow = "(" + tokenDetails.first + "," + std::to_string(tokenDetails.second) + ")";
+                outputFile << prepRow << std::endl;
+            }
+            // close the output file
+            outputFile.close();
+        }
+    }
+    // return shuffleParentPath
+    return shuffleParentPath;
+}
+
+
 // This method will write corresponding data points to disk
 // It will return the directory name where data is being written to.
 std::string FileProcessor::writeDirectory() {
+    std::string tempDirectoryCreated;
     // Mapper operation support
     if (this->getOperation() == "mapper") {
-        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
-        std::cout << "Proceeding to write Mapper data output to file system...." << std::endl;
-        // Declare variable mapData
-        // Key -> FileName
-        // Value -> Vector containing tuples -> (Token, 1, Originating Partition the token (line belonged to)
-        std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mapData = this->getMapperData();
-        // Declare tempDirectory
-        std::string rootTempDirectory;
-        // We will be iterating over the mapData map
-        for (const auto &itr: mapData) {
-            std::string fullyQualifiedFileName = itr.first;
-            std::string fileDirectory = fullyQualifiedFileName.substr(0, fullyQualifiedFileName.rfind('/') + 1);
-            rootTempDirectory = fileDirectory + "temp_mapper/";
-            std::string baseFileName = fullyQualifiedFileName.substr(fullyQualifiedFileName.rfind('/') + 1);
-            std::string tempDirectory = rootTempDirectory + baseFileName + "/";
-                    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
-            std::cout << "Operating on Mapper output from " << fullyQualifiedFileName << std::endl;
-            std::cout << "Originating directory: " << fileDirectory << std::endl;
-            std::cout << "Creating a temp directory to host mapper output: " << tempDirectory << std::endl;
-            // The above three lines should be logged
-            // Creating temp directory if temp directory is not there already
-            std::filesystem::path tempPath(tempDirectory);
-            if (std::filesystem::exists(tempPath)) {
-                // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
-                std::cout << "The temp directory: " << tempDirectory << " already exists! " << std::endl;
-            } else {
-                // create directory!
-                std::filesystem::create_directories(tempDirectory);
-                // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
-                std::cout << "Created the temp directory: " << tempDirectory << std::endl;
-            }
-            // Let's iterate over the entire mapper data going against each partition
-            for (size_t partition = 0; partition < itr.second.size(); ++partition) {
-                // we will process all data within partition vector by writing to a file
-                // declare an ostream
-                std::ofstream outputFile;
-                // create an empty file against the temp directory
-                outputFile.open(tempDirectory + baseFileName + "." + std::to_string(partition));
-                // iterate over each partition vector
-                for (const auto &segment: itr.second[partition]) {
-                    //outputFile << std::get<0>(itr.second[partition]) << std::endl;
-                    for (const auto &token: segment) {
-                        std::string prepRow = '(' +
-                                std::get<0>(token) + ',' +
-                                        std::to_string((char) std::get<1>(token)) + ')';
-                        outputFile << prepRow << std::endl;
-                    }
-                }
-                // close the output file
-                outputFile.close();
-            }
-        }
-        // return the root temp directory
-        return rootTempDirectory;
-    } else if(this->getOperation() == "sorter"){
-        // to implement!
-        return "foo";
-    } else if(this->getOperation() == "output"){
+        tempDirectoryCreated = this->writeMapperOutputs();
+        return tempDirectoryCreated;
+    } else if(this->getOperation() == "shuffler"){
+        tempDirectoryCreated = this->writeShuffleOutputs();
+        return tempDirectoryCreated;
+    } else if(this->getOperation() == "reducer"){
         // to implement!
         return "bar";
     } else {
         // no other cases to cover
         return "Nothing";
     }
-}
-
-// Not set up yet!
-void FileProcessor::entryMethod() {
-    // Will pick this up after mapper class
 }
