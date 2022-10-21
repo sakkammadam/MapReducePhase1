@@ -6,6 +6,8 @@
 #include <vector>
 #include "FileProcessor.h"
 #include "Mapper.h"
+#include <boost/log/trivial.hpp>
+
 
 int main(int argc, char* argv[]) {
     // Declare the file being processed
@@ -15,7 +17,7 @@ int main(int argc, char* argv[]) {
     // Create a testing object called testingFoo -- the directory path should be filePath - line #13
     FileProcessor testingFoo(
             "input",
-            "/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare"
+            "/Users/AJEsparza/syr/CSE_687/shakespeare"
             );
 
     // Retrieve private data members - directory and requested operation (input)
@@ -37,6 +39,16 @@ int main(int argc, char* argv[]) {
 
     // Please log this - @Hal, @Abraham - TODO
     std::cout << "Output of Mapper operations have been written to " << tempDirectory << std::endl;
+
+    // message output for logging error, warnings, info, fatal, etc
+    // Need to get it output on a file
+    BOOST_LOG_TRIVIAL(trace) << "A trace severity message";
+    BOOST_LOG_TRIVIAL(debug) << "A debug severity message";
+    BOOST_LOG_TRIVIAL(info) << "An informational severity message";
+    BOOST_LOG_TRIVIAL(warning) << "A warning severity message";
+    BOOST_LOG_TRIVIAL(error) << "An error severity message";
+    BOOST_LOG_TRIVIAL(fatal) << "A fatal severity message";
+
 
     return 0;
 }
