@@ -40,13 +40,15 @@ private:
     // Request type of operation -
     // 1) input - it will read all files along a directory path, which must be supplied
     // 2) mapper - it will read an object in memory which was result of Mapper operation and write to a temp directory
-    // 3) sorter - it will read an object in memory which was result of Sorter operation and write to a temp directory
-    // 4) output - it will read an object in memory which was result of Reducer operation and write to a final directory
+    // 3) shuffler - it will read an object in memory which was result of Sorter operation and write to a temp directory
+    // 4) reducer - it will read an object in memory which was result of Reducer operation and write to a final directory
     std::string directoryOperation;
     // Input Directory path used for input operation
     std::string inputDirectoryPath;
     // Result object from Mapper operation
     std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mapperData;
+    // Result object from Shuffler operation
+    std::vector<std::map<std::string, std::map<std::string, size_t>>> shufflerData;
 
 
     // Public class functions!
@@ -63,6 +65,12 @@ public:
             const std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> &map_result
             );
 
+    // Initialization constructor - used primarily for shuffler operations
+    explicit FileProcessor(
+            const std::string &operation,
+            const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result
+    );
+
     // Setter methods
     // This will set the FileProcessor's desired operation in private data member directoryOperation
     void setOperation(const std::string &operation);
@@ -72,6 +80,9 @@ public:
 
     // This will set the FileProcessor's mapper Data private data member
     void setMapperData(const std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> &map_result);
+
+    // This will set the FileProcessor's shuffler data private data member
+    void setShufflerData(const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result);
 
     // Getter methods
     // This will retrieve the private data member directoryOperation
@@ -83,20 +94,33 @@ public:
     // This will retrieve the mapper data private data member
     std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> getMapperData();
 
-    // File lines
+    // This will retrieve the shuffler data private data member
+    std::vector<std::map<std::string, std::map<std::string, size_t>>> getShufflerData();
+
+    // File lines - helper method within readDirectory
     int linesPerFile(const std::string &fileName);
 
-    // Input operations - write out a map containing vector of vectors
+    // Input operations
+    // Create a map containing vector of vectors of data against input directory
     std::map<std::string, std::vector<std::vector<std::string>>> readDirectory();
+
+    // Output operations
+
+    // This method will create necessary directory paths
+    void createDirectory(const std::string &directoryPath);
+
+    // This method will write the outputs of Mapper Operations - it will return the directory of temp_mapper
+    std::string writeMapperOutputs();
+
+    // This method will write the outputs of Shuffle Operations - it will return the directory of temp_shuffler
+    std::string writeShuffleOutputs();
+
+    // This method will write the outputs of Reducer Operations - it will return the directory of temp_reducer
+    std::string writeReduceOutputs();
 
     // This method will write corresponding data points to disk
     // It will return the directory name where data is being written to.
     std::string writeDirectory();
-
-    // Entry method TODO
-    void entryMethod();
-
-
 
 };
 
