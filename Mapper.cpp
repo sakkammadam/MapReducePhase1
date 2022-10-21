@@ -31,70 +31,12 @@ Mapper::Mapper(
 void Mapper::setProcessedDirectory(const std::map<std::string, std::vector<std::vector<std::string>>> &processed_directory) {
     this->processedDirectory = processed_directory;
 }
-/*
-// sets the input file name private data member
-void Mapper::setInputFileName(const std::string &input_file) {
-    std::filesystem::path p(input_file);
-    if(std::filesystem::exists(p)){
-        this->inputFileName = input_file;
-    } else {
-        throw std::runtime_error("Input file not found!: " + input_file );
-    }
-}
-
-// sets the input file line private data member
-void Mapper::setInputFileLine(const std::string &input_line) {
-    // assign
-    this->inputFileLine = input_line;
-}
-
-// sets the temp directory private data member - if directory not present, will be created
-void Mapper::setTempDirectory(const std::string &temp_directory) {
-    std::filesystem::path p(temp_directory);
-    if(std::filesystem::exists(p)){
-        // assign
-        this->tempDirectory = temp_directory;
-    } else {
-        // create directory!
-        std::filesystem::create_directory(temp_directory);
-        // then assign
-        this->tempDirectory = temp_directory;
-    }
-}
-
-// This will set the linePartitionNumber private data member within the Mapper object
-void Mapper::setLinePartitionNumber(int partitionLine) {
-    this->linePartitionNumber = partitionLine;
-}
-*/
 
 // Getters
 // This will retrieve the processedDirectory private data member within the Mapper object
 std::map<std::string, std::vector<std::vector<std::string>>> Mapper::getProcessedDirectory() {
     return this->processedDirectory;
 }
-
-/*
-// This will retrieve the inputFileName private data member
-std::string Mapper::getInputFileName() {
-    return this->inputFileName;
-}
-
-// This will retrieve the inputFileLine private data member
-std::string Mapper::getInputFileLine() {
-    return this->inputFileLine;
-}
-
-// This will retrieve the tempDirectory private data member
-std::string Mapper::getTempDirectory() {
-    return this->tempDirectory;
-}
-
-// This will retrieve the linePartitionNumber private data member
-int Mapper::getLinePartitionNumber() {
-    return this->linePartitionNumber;
-}
- */
 
 // Cleanup methods -
 // 1) lowerRemovePunc - This method will lowercase and remove punctuations, essentially standardize a line
@@ -194,9 +136,3 @@ std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string
     // return outputMapperData for downstream processing
     return outputMapperData;
 }
-
-
-
-
-
-

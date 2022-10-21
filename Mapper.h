@@ -55,9 +55,6 @@ public:
     // Overarching MapOperations method that acts against all lines of a file
     std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mapOperations();
 
-
-
-
 };
 
 
