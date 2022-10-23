@@ -128,6 +128,7 @@ std::vector<std::map<std::string, std::map<std::string, size_t>>> Shuffler::shuf
             }
         }
     } else {
+        // @Hal, @Abraham - please log - TODO!
         std::cout << "**Warning** directory path " << this->getMapOutputDirectory() << " is empty!" << std::endl;
     }
     // return object for downstream processing
