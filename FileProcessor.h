@@ -49,6 +49,8 @@ private:
     std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mapperData;
     // Result object from Shuffler operation
     std::vector<std::map<std::string, std::map<std::string, size_t>>> shufflerData;
+    // Result object from Reducer operation
+    std::vector<std::map<std::string, std::map<std::string, size_t>>> reducerData;
 
 
     // Public class functions!
@@ -65,11 +67,12 @@ public:
             const std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> &map_result
             );
 
-    // Initialization constructor - used primarily for shuffler operations
+    // Initialization constructor - used primarily for shuffler and reducer operations
     explicit FileProcessor(
             const std::string &operation,
-            const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result
+            const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_or_reducer_result
     );
+
 
     // Setter methods
     // This will set the FileProcessor's desired operation in private data member directoryOperation
@@ -84,6 +87,9 @@ public:
     // This will set the FileProcessor's shuffler data private data member
     void setShufflerData(const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result);
 
+    // This will set the FileProcessor's reducer data private data member
+    void setReducerData(const std::vector<std::map<std::string, std::map<std::string, size_t>>> &reducer_result);
+
     // Getter methods
     // This will retrieve the private data member directoryOperation
     std::string getOperation();
@@ -96,6 +102,9 @@ public:
 
     // This will retrieve the shuffler data private data member
     std::vector<std::map<std::string, std::map<std::string, size_t>>> getShufflerData();
+
+    // This will retrieve the reducer data private data member
+    std::vector<std::map<std::string, std::map<std::string, size_t>>> getReducerData();
 
     // File lines - helper method within readDirectory
     int linesPerFile(const std::string &fileName);
@@ -115,7 +124,7 @@ public:
     // This method will write the outputs of Shuffle Operations - it will return the directory of temp_shuffler
     std::string writeShuffleOutputs();
 
-    // This method will write the outputs of Reducer Operations - it will return the directory of temp_reducer
+    // This method will write the outputs of Reducer Operations - it will return the directory of final_output
     std::string writeReduceOutputs();
 
     // This method will write corresponding data points to disk
