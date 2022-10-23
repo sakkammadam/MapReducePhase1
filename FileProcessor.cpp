@@ -39,15 +39,21 @@ FileProcessor::FileProcessor(
     this->setMapperData(map_result);
 }
 
-// Initialization constructor - used primarily for shuffler operations
+// Initialization constructor - used primarily for shuffler and reducer operations
 FileProcessor::FileProcessor(
         const std::string &operation,
-        const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_result
+        const std::vector<std::map<std::string, std::map<std::string, size_t>>> &shuffle_or_reducer_result
         ) {
     // Set operation - will raise error if the value is incorrect
     this->setOperation(operation);
-    // Set shuffler Data private data member
-    this->setShufflerData(shuffle_result);
+    if(this->getOperation() == "shuffler"){
+        // Set shuffler Data private data member
+        this->setShufflerData(shuffle_or_reducer_result);
+    } else if (this->getOperation() == "reducer"){
+        // Set reducer Data private data member
+        this->setReducerData(shuffle_or_reducer_result);
+    }
+
 }
 
 // Setter methods
@@ -82,6 +88,12 @@ void FileProcessor::setShufflerData(
 
 }
 
+// This will set the FileProcessor's reducer data private data member
+void FileProcessor::setReducerData(
+        const std::vector<std::map<std::string, std::map<std::string, size_t>>> &reducer_result) {
+    this->reducerData = reducer_result;
+}
+
 // Getter methods
 // This will retrieve the private data member directoryOperation
 std::string FileProcessor::getOperation() {
@@ -101,6 +113,11 @@ std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string
 // This will retrieve the shuffler data private data member
 std::vector<std::map<std::string, std::map<std::string, size_t>>> FileProcessor::getShufflerData() {
     return this->shufflerData;
+}
+
+// This will retrieve the reducer data private data member
+std::vector<std::map<std::string, std::map<std::string, size_t>>> FileProcessor::getReducerData() {
+    return this->reducerData;
 }
 
 // This method will determine the number of lines per file used in conjunction with readDirectory method
@@ -275,7 +292,7 @@ std::string FileProcessor::writeShuffleOutputs() {
             // this is the shuffle directory associated
             std::string shuffleDirectory = shufflePartitionDetails.first.substr(0, shufflePartitionDetails.first.rfind('/') + 1);
             // capturing the parent path
-            shuffleParentPath = std::filesystem::path(shuffleDirectory).parent_path().string();
+            shuffleParentPath = std::filesystem::path(shuffleDirectory).parent_path().parent_path().string();
             // We need to check if directory exists. if it doesn't - create the directory, else don't do anything
             // Creating shuffle directory if shuffle directory is not there already
             this->createDirectory(shuffleDirectory);
@@ -299,6 +316,44 @@ std::string FileProcessor::writeShuffleOutputs() {
 }
 
 
+// This method will write the outputs of Reducer Operations - it will return the directory of final_output
+std::string FileProcessor::writeReduceOutputs() {
+    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
+    std::cout << "Proceeding to write reducer data output to file system...." << std::endl;
+    // Reducer data
+    std::vector<std::map<std::string, std::map<std::string, size_t>>> reduceData = this->getReducerData();
+    // Shuffle parent path
+    std::string reducerParentPath;
+    // Let's iterate over each map item in the vector
+    for(const auto& reduceFileDirData:reduceData) {
+        // let's read corresponding map
+        for (const auto &reduceFile: reduceFileDirData) {
+            // this is the shuffle directory associated
+            std::string reduceFileDir = reduceFile.first.substr(0, reduceFile.first.rfind('/') + 1);
+            // capturing the grandparent path
+            reducerParentPath = std::filesystem::path(reduceFileDir).parent_path().string();
+            // We need to check if directory exists. if it doesn't - create the directory, else don't do anything
+            // Creating shuffle directory if shuffle directory is not there already
+            this->createDirectory(reduceFileDir);
+            // @Hal, @Abraham - please log this! TODO! - should be pushed to log files
+            std::cout << "Proceeding to create " << reduceFile.first << std::endl;
+            // declare an ostream
+            std::ofstream outputFile;
+            // create an empty file against the temp directory
+            outputFile.open(reduceFile.first);
+            // let's iterate over the map
+            for (const auto &tokenDetails: reduceFile.second) {
+                std::string prepRow = "(" + tokenDetails.first + "," + std::to_string(tokenDetails.second) + ")";
+                outputFile << prepRow << std::endl;
+            }
+            // close the output file
+            outputFile.close();
+        }
+    }
+    // return the grandparent path
+    return reducerParentPath;
+}
+
 // This method will write corresponding data points to disk
 // It will return the directory name where data is being written to.
 std::string FileProcessor::writeDirectory() {
@@ -312,9 +367,10 @@ std::string FileProcessor::writeDirectory() {
         return tempDirectoryCreated;
     } else if(this->getOperation() == "reducer"){
         // to implement!
-        return "bar";
+        tempDirectoryCreated = this->writeReduceOutputs();
+        return tempDirectoryCreated;
     } else {
         // no other cases to cover
-        return "Nothing";
+        throw std::runtime_error("Unsupported operation!: " + this->getOperation() );
     }
 }
