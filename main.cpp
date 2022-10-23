@@ -10,23 +10,71 @@
 #include "Shuffler.h"
 #include "Reducer.h"
 
+// Overarching function that will orchestrate the main flow
+void runOperations(const std::string &input_directory);
+
+// Overarching function that will perform Map reduce operations
+void mapReduceWorkflow(const std::string &input_directory);
+
 int main(int argc, char* argv[]) {
-    // Declare the file being processed
-    //char* filePathBase = argv[1];
-    //std::string filePath(filePathBase);
 
+    // Check arguments supplied
+    if(argc==1){
+        // No arguments were provided!
+        std::cout << "No arguments were provided! Please resubmit with input paths!" << std::endl;
+    } else {
+        // Declare the file being processed
+        char* inputDirBase = argv[1];
+        // convert to string
+        std::string inputDir(inputDirBase);
+        // Orchestrate the entire operation
+        try{
+            runOperations(inputDir);
+        }
+        catch (std::runtime_error &runtime_error){
+            std::cout << "Exception occurred: " << runtime_error.what() << std::endl;
+        }
+    }
 
-    // Create a testing object called testingFoo -- the directory path should be filePath - line #13
-    FileProcessor testSample(
-            "input",
-            "/home/sakkammadam/Documents/syr/cse687/projects/input_files/sample"
-            );
+    // standard return
+    return 0;
+}
+
+// Overarching function that will orchestrate the main flow
+void runOperations(const std::string &input_directory){
+    // Let's check if the input directory exists in the file system
+    std::filesystem::path directoryPath(input_directory);
+    if(std::filesystem::is_directory(directoryPath)){
+        // Let's declare a vector to hold filenames within input directory
+        std::vector<std::string> directoryInputFiles;
+        // let's find the files
+        for(const auto &entry: std::filesystem::directory_iterator(input_directory)){
+            directoryInputFiles.push_back(entry.path());
+        }
+        if(!directoryInputFiles.empty()){
+            // Call mapReduceOperations function here!
+            std::cout << "Kicking off MapReduce operations..." << std::endl;
+            mapReduceWorkflow(input_directory);
+        } else {
+            std::cout << "No files found to process along " << input_directory << std::endl;
+        }
+
+    } else {
+        throw std::runtime_error("Directory not found!: " + input_directory );
+    }
+}
+
+// Overarching function that will perform Map reduce operations
+void mapReduceWorkflow(const std::string &input_directory){
+    // Creating an object using FileProcessor
+    // We are using the explicit CTOR defined for input operations
+    FileProcessor allInputData("input",input_directory);
 
     // Retrieve private data members - directory and requested operation (input)
-    std::cout << testSample.getInputDirectoryPath() << std::endl;
-    std::cout << testSample.getOperation() << std::endl;
+    std::cout << allInputData.getInputDirectoryPath() << std::endl;
+    std::cout << allInputData.getOperation() << std::endl;
     // Create a map of 2d vectors that will host all data present along the path
-    std::map<std::string, std::vector<std::vector<std::string>>> directoryData = testSample.readDirectory();
+    std::map<std::string, std::vector<std::vector<std::string>>> directoryData = allInputData.readDirectory();
 
     // declare a map of 3d vector objects that will hold the results of mapper operations
     std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> mappedData;
@@ -69,5 +117,8 @@ int main(int argc, char* argv[]) {
     // Please log this - @Hal, @Abraham - TODO
     std::cout << "Output data has been written to " << outputDirectory << std::endl;
 
-    return 0;
+    // Let's create a SUCCESS file in the output directory to signify completion of operations
+    std::ofstream successFile;
+    successFile.open(outputDirectory + "/" + "SUCCESS.ind");
+    successFile.close();
 }
