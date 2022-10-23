@@ -125,12 +125,8 @@ std::vector<std::map<std::string, std::map<std::string, size_t>>> Reducer::reduc
         // Let's iterate over each subdirectory named after a file
         for (const auto &dirShuffleFile: shufflerDirectoryFiles) {
             // Let's iterate over each shuffled file within the directory
-            for (const auto &shuffleFile: std::filesystem::directory_iterator(dirShuffleFile)) {
-                // We will create a map of all sorted tokens and their corresponding tokens occurrences, within a shuffle file
-                std::map<std::string, std::map<std::string, size_t>> reducedFile = this->reduceFile(shuffleFile.path());
-                // We will then append each reduced file map to directoryReduceShuffle vector
-                directoryReduceVector.push_back(reducedFile);
-            }
+            std::map<std::string, std::map<std::string, size_t>> reducedDir = this->reduceFile(dirShuffleFile);
+            directoryReduceVector.push_back(reducedDir);
         }
     } else {
         // @Hal, @Abraham - please log - TODO!
