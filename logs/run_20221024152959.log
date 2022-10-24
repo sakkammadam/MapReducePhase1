@@ -1,0 +1,856 @@
+Kicking off MapReduce operations...
+/Users/halbaird/syr/cse_687/shakespeare
+input
+"/Users/halbaird/syr/cse_687/shakespeare/Cymbeline.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TheTempest.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TheComedyOfErrors.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/temp_mapper"
+"/Users/halbaird/syr/cse_687/shakespeare/final_output"
+"/Users/halbaird/syr/cse_687/shakespeare/Love'sLabourLost.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TheTwoGentlemenOfVerona.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/Winter'sTale.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/All'sWellThatEndsWell.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TamingOfTheShrew.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TheTwelthNight.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/PericlesPrinceOfTyre.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/AsYouLIkeIte.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TheMerchantOfVenice.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/MeasureForMeasure.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TheMerryWivesOfWindsor.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/MuchAdoAboutNothing.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/TroilusAndCressida .txt"
+"/Users/halbaird/syr/cse_687/shakespeare/AMidSummerNightsDream.txt"
+"/Users/halbaird/syr/cse_687/shakespeare/temp_shuffler"
+The file /Users/halbaird/syr/cse_687/shakespeare/Cymbeline.txt has 4846 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/Cymbeline.txt
+Number of lines: 4846
+Number of lines per partition: 500
+NUmber of partitions per file: 10
+The file /Users/halbaird/syr/cse_687/shakespeare/TheTempest.txt has 3160 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TheTempest.txt
+Number of lines: 3160
+Number of lines per partition: 500
+NUmber of partitions per file: 7
+The file /Users/halbaird/syr/cse_687/shakespeare/TheComedyOfErrors.txt has 2678 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TheComedyOfErrors.txt
+Number of lines: 2678
+Number of lines per partition: 500
+NUmber of partitions per file: 6
+The file /Users/halbaird/syr/cse_687/shakespeare/temp_mapper has 0 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/temp_mapper
+Number of lines: 0
+Number of lines per partition: 500
+NUmber of partitions per file: 0
+The file /Users/halbaird/syr/cse_687/shakespeare/final_output has 0 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/final_output
+Number of lines: 0
+Number of lines per partition: 500
+NUmber of partitions per file: 0
+The file /Users/halbaird/syr/cse_687/shakespeare/Love'sLabourLost.txt has 4145 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/Love'sLabourLost.txt
+Number of lines: 4145
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /Users/halbaird/syr/cse_687/shakespeare/TheTwoGentlemenOfVerona.txt has 3316 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TheTwoGentlemenOfVerona.txt
+Number of lines: 3316
+Number of lines per partition: 500
+NUmber of partitions per file: 7
+The file /Users/halbaird/syr/cse_687/shakespeare/Winter'sTale.txt has 4347 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/Winter'sTale.txt
+Number of lines: 4347
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /Users/halbaird/syr/cse_687/shakespeare/All'sWellThatEndsWell.txt has 4046 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/All'sWellThatEndsWell.txt
+Number of lines: 4046
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /Users/halbaird/syr/cse_687/shakespeare/TamingOfTheShrew.txt has 3854 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TamingOfTheShrew.txt
+Number of lines: 3854
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /Users/halbaird/syr/cse_687/shakespeare/TheTwelthNight.txt has 3717 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TheTwelthNight.txt
+Number of lines: 3717
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /Users/halbaird/syr/cse_687/shakespeare/PericlesPrinceOfTyre.txt has 3431 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/PericlesPrinceOfTyre.txt
+Number of lines: 3431
+Number of lines per partition: 500
+NUmber of partitions per file: 7
+The file /Users/halbaird/syr/cse_687/shakespeare/AsYouLIkeIte.txt has 3659 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/AsYouLIkeIte.txt
+Number of lines: 3659
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /Users/halbaird/syr/cse_687/shakespeare/TheMerchantOfVenice.txt has 3555 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TheMerchantOfVenice.txt
+Number of lines: 3555
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /Users/halbaird/syr/cse_687/shakespeare/MeasureForMeasure.txt has 4037 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/MeasureForMeasure.txt
+Number of lines: 4037
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /Users/halbaird/syr/cse_687/shakespeare/TheMerryWivesOfWindsor.txt has 4046 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TheMerryWivesOfWindsor.txt
+Number of lines: 4046
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /Users/halbaird/syr/cse_687/shakespeare/MuchAdoAboutNothing.txt has 3786 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/MuchAdoAboutNothing.txt
+Number of lines: 3786
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /Users/halbaird/syr/cse_687/shakespeare/TroilusAndCressida .txt has 5047 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/TroilusAndCressida .txt
+Number of lines: 5047
+Number of lines per partition: 500
+NUmber of partitions per file: 11
+The file /Users/halbaird/syr/cse_687/shakespeare/AMidSummerNightsDream.txt has 2932 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/AMidSummerNightsDream.txt
+Number of lines: 2932
+Number of lines per partition: 500
+NUmber of partitions per file: 6
+The file /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler has 0 lines.
+Properties for /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler
+Number of lines: 0
+Number of lines per partition: 500
+NUmber of partitions per file: 0
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/AMidSummerNightsDream.txt
+The data has 6 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 432 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/All'sWellThatEndsWell.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 46 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/AsYouLIkeIte.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 159 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/Cymbeline.txt
+The data has 10 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 500 records
+Partition#9 has 346 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/Love'sLabourLost.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 145 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/MeasureForMeasure.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 37 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/MuchAdoAboutNothing.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 286 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/PericlesPrinceOfTyre.txt
+The data has 7 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 431 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TamingOfTheShrew.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 354 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TheComedyOfErrors.txt
+The data has 6 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 178 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TheMerchantOfVenice.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 55 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TheMerryWivesOfWindsor.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 46 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TheTempest.txt
+The data has 7 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 160 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TheTwelthNight.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 217 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TheTwoGentlemenOfVerona.txt
+The data has 7 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 316 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/TroilusAndCressida .txt
+The data has 11 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 500 records
+Partition#9 has 500 records
+Partition#10 has 47 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/Winter'sTale.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 347 records
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/final_output
+The data has 0 partitions.
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper
+The data has 0 partitions.
+Mapping data from: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler
+The data has 0 partitions.
+Proceeding to write Mapper data output to file system....
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/AMidSummerNightsDream.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/All'sWellThatEndsWell.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/AsYouLIkeIte.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/Cymbeline.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/Love'sLabourLost.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/MeasureForMeasure.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/MuchAdoAboutNothing.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/PericlesPrinceOfTyre.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TamingOfTheShrew.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TheComedyOfErrors.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TheMerchantOfVenice.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TheMerryWivesOfWindsor.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TheTempest.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TheTwelthNight.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TheTwoGentlemenOfVerona.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/TroilusAndCressida .txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/Winter'sTale.txt
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/
+The mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/ already exists! 
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/final_output
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/final_output/
+Created the mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/final_output/
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/temp_mapper
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/temp_mapper/
+Created the mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/temp_mapper/
+Operating on Mapper output from /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler
+Originating directory: /Users/halbaird/syr/cse_687/shakespeare/
+Creating a temp directory to host mapper output: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/temp_shuffler/
+Created the mapper directory: /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/temp_shuffler/
+Output of Mapper operations have been written to /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.9
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Cymbeline.txt/Cymbeline.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTempest.txt/TheTempest.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/TheComedyOfErrors.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/TheComedyOfErrors.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/TheComedyOfErrors.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/TheComedyOfErrors.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/TheComedyOfErrors.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheComedyOfErrors.txt/TheComedyOfErrors.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Love'sLabourLost.txt/Love'sLabourLost.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/Winter'sTale.txt/Winter'sTale.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TamingOfTheShrew.txt/TamingOfTheShrew.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheTwelthNight.txt/TheTwelthNight.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AsYouLIkeIte.txt/AsYouLIkeIte.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MeasureForMeasure.txt/MeasureForMeasure.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.10
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.6
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.1
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.8
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.9
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/TroilusAndCressida .txt/TroilusAndCressida .txt.7
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.4
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.3
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.2
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.5
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.0
+Shuffling file - /Users/halbaird/syr/cse_687/shakespeare/temp_mapper/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.1
+Proceeding to write Shuffle data output to file system....
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.9
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt/Cymbeline.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt/TheTempest.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/TheComedyOfErrors.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/TheComedyOfErrors.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/TheComedyOfErrors.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/TheComedyOfErrors.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/TheComedyOfErrors.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt/TheComedyOfErrors.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt/Love'sLabourLost.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt/TheTwoGentlemenOfVerona.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt/Winter'sTale.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt/All'sWellThatEndsWell.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt/TamingOfTheShrew.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt/TheTwelthNight.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt/PericlesPrinceOfTyre.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt/AsYouLIkeIte.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt/TheMerchantOfVenice.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt/MeasureForMeasure.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt/TheMerryWivesOfWindsor.txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt/MuchAdoAboutNothing.txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.10
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.6
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.1
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.8
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.9
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt/TroilusAndCressida .txt.7
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.4
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.3
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.2
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.5
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.0
+The shuffler directory: /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt/AMidSummerNightsDream.txt.1
+Output of shuffle operations have been written to /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Cymbeline.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTempest.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheComedyOfErrors.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Love'sLabourLost.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwoGentlemenOfVerona.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/Winter'sTale.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/All'sWellThatEndsWell.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TamingOfTheShrew.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheTwelthNight.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/PericlesPrinceOfTyre.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AsYouLIkeIte.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerchantOfVenice.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MeasureForMeasure.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TheMerryWivesOfWindsor.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/MuchAdoAboutNothing.txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/TroilusAndCressida .txt
+Reducing directory path - /Users/halbaird/syr/cse_687/shakespeare/temp_shuffler/AMidSummerNightsDream.txt
+Proceeding to write reducer data output to file system....
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/Cymbeline.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TheTempest.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TheComedyOfErrors.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/Love'sLabourLost.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TheTwoGentlemenOfVerona.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/Winter'sTale.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/All'sWellThatEndsWell.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TamingOfTheShrew.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TheTwelthNight.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/PericlesPrinceOfTyre.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/AsYouLIkeIte.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TheMerchantOfVenice.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/MeasureForMeasure.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TheMerryWivesOfWindsor.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/MuchAdoAboutNothing.txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/TroilusAndCressida .txt
+The reducer directory: /Users/halbaird/syr/cse_687/shakespeare/final_output/ already exists! 
+Proceeding to create /Users/halbaird/syr/cse_687/shakespeare/final_output/AMidSummerNightsDream.txt
+Output data has been written to /Users/halbaird/syr/cse_687/shakespeare/final_output
