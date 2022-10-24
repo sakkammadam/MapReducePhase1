@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 project(scratchStuff)
-set(Boost_INCLUDE_DIR /home/sakkammadam/CLionProjects/boost_libs/alldeps_v1.80.0/include/)
-set(Boost_LIBRARY_DIR /home/sakkammadam/CLionProjects/boost_libs/alldeps_v1.80.0/lib/)
+set(Boost_INCLUDE_DIR /opt/homebrew/cellar/boost/1.80.0/include/)
+set(Boost_LIBRARY_DIR /opt/homebrew/cellar/boost/1.80.0/lib/)
 set(CMAKE_CXX_STANDARD 17)
 set(Boost_NO_WARN_NEW_VERSIONS 1)
 
