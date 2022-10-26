@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
+#include <sstream>
 #include <vector>
 #include <map>
 #include <tuple>

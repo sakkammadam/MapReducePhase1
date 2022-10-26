@@ -9,6 +9,7 @@
 #include <tuple>
 #include <vector>
 #include <map>
+#include <sstream>
 
 class Mapper {
 // Private data members
