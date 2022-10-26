@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(scratchStuff)
+project(MapReducePhase1)
 set(Boost_INCLUDE_DIR /home/sakkammadam/CLionProjects/boost_libs/alldeps_v1.80.0/include/)
 set(Boost_LIBRARY_DIR /home/sakkammadam/CLionProjects/boost_libs/alldeps_v1.80.0/lib/)
 set(CMAKE_CXX_STANDARD 17)
@@ -7,4 +7,4 @@ set(Boost_NO_WARN_NEW_VERSIONS 1)
 
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
-add_executable(scratchStuff main.cpp FileProcessor.cpp FileProcessor.h Mapper.cpp Mapper.h Shuffler.cpp Shuffler.h Reducer.cpp Reducer.h)
+add_executable(MapReducePhase1 main.cpp FileProcessor.cpp FileProcessor.h Mapper.cpp Mapper.h Shuffler.cpp Shuffler.h Reducer.cpp Reducer.h)
