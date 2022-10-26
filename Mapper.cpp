@@ -107,10 +107,8 @@ std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string
     std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>>> outputMapperData;
     // let's invoke the private data member
     for(const auto &fileData: getProcessedDirectory()){
-        // please log the file name - TODO - @Hal, @Abraham
         std::cout << "Mapping data from: " << fileData.first << std::endl;
         // now we are going to read ALL the data associated for a particular file
-        // please log the file vector size - TODO - @Hal, @Abraham
         std::cout << "The data has " << fileData.second.size() << " partitions." << std::endl;
         // Declare a file vector - it contains partition vectors
         std::vector<std::vector<std::vector<std::tuple<std::string, int, int>>>> fileVector;
@@ -118,7 +116,6 @@ std::map<std::string, std::vector<std::vector<std::vector<std::tuple<std::string
         for(size_t partition=0; partition < fileData.second.size(); ++partition){
             // Declare a partition vector
             std::vector<std::vector<std::tuple<std::string, int, int>>> partitionVector;
-            // please log the partition size - TODO - @Hal,@Abraham
             std::cout << "Partition#" << partition << " has " << fileData.second[partition].size() << " records" << std::endl;
             // Now for each partition, we are going to read each line!
             for(size_t line=0; line < fileData.second[partition].size(); ++line){

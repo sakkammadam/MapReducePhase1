@@ -89,7 +89,6 @@ void mapReduceWorkflow(const std::string &input_directory){
     // Proceed to write data to disk, capture the directory path and assign to mapDirectory
     std::string mapDirectory = mapperOutputToDisk.writeDirectory();
 
-    // Please log this - @Hal, @Abraham - TODO
     std::cout << "Output of Mapper operations have been written to " << mapDirectory << std::endl;
 
     // Create a Shuffle object whose input is the map of 3d vectors - output of Mapper operations viz. partitioned files
@@ -102,7 +101,6 @@ void mapReduceWorkflow(const std::string &input_directory){
     FileProcessor shuffleOutputToDisk("shuffler",shuffledData);
     std::string shuffleDirectory = shuffleOutputToDisk.writeDirectory();
 
-    // Please log this - @Hal, @Abraham - TODO
     std::cout << "Output of shuffle operations have been written to " << shuffleDirectory << std::endl;
 
     // let's provide the shuffle directory to the Reducer !
@@ -114,7 +112,6 @@ void mapReduceWorkflow(const std::string &input_directory){
     FileProcessor reduceOutputToDisk("reducer",reducedData);
     std::string outputDirectory = reduceOutputToDisk.writeDirectory();
 
-    // Please log this - @Hal, @Abraham - TODO
     std::cout << "Output data has been written to " << outputDirectory << std::endl;
 
     // Let's create a SUCCESS file in the output directory to signify completion of operations

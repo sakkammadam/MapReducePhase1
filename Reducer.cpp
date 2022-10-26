@@ -52,7 +52,6 @@ std::map<std::string, std::map<std::string, size_t>> Reducer::reduceFile(
     std::filesystem::path directoryPath(fullyQualifiedShuffleFilePath);
     // Do the following only if the directory exists in the file system!
     if (std::filesystem::is_directory(directoryPath)) {
-        // Please log! - @Hal, @Abraham - TODO
         std::cout << "Reducing directory path - " << fullyQualifiedShuffleFilePath << std::endl;
         // Create temp objects
         std::map<std::string, size_t> tempReduce;
@@ -98,7 +97,6 @@ std::map<std::string, std::map<std::string, size_t>> Reducer::reduceFile(
         // we will simply attach it to the desired output file and save the result to singleReducedFile object
         singleReducedFile.insert({fullyQualifiedOutFilePath, tempReduce});
     } else {
-        // TODO - @Hal, @Abraham - please log!
         std::cout << "** Warning! ** Shuffle directory: " << fullyQualifiedShuffleFilePath << "doesn't exist in the file system!" << std::endl;
     }
     // final return
@@ -129,7 +127,6 @@ std::vector<std::map<std::string, std::map<std::string, size_t>>> Reducer::reduc
             directoryReduceVector.push_back(reducedDir);
         }
     } else {
-        // @Hal, @Abraham - please log - TODO!
         std::cout << "**Warning** Shuffle directory path " << this->getShuffleOutputDirectory() << " is empty!" << std::endl;
     }
     // return object for downstream processing

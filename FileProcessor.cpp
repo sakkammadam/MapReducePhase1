@@ -168,12 +168,10 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
             int numLinesPerPartition = 500;
             // Determine number of partitions per file
             int numPartitionsPerFile = ceil(numLinesPerFile/double(numLinesPerPartition));
-            // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
             std::cout << "Properties for " << refFile << std::endl;
             std::cout << "Number of lines: " << numLinesPerFile << std::endl;
             std::cout << "Number of lines per partition: " << numLinesPerPartition << std::endl;
             std::cout << "NUmber of partitions per file: " << numPartitionsPerFile << std::endl;
-            // TODO - the above 4 lines should be pushed to log
             // Represent the current line number
             int currentLine = 0;
             // Initialize partition
@@ -218,19 +216,16 @@ std::map<std::string, std::vector<std::vector<std::string>>> FileProcessor::read
 void FileProcessor::createDirectory(const std::string &directoryPath) {
     std::filesystem::path shufflePath(directoryPath);
     if (std::filesystem::exists(directoryPath)) {
-        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
         std::cout << "The " << this->getOperation() <<  " directory: " << directoryPath << " already exists! " << std::endl;
     } else {
         // create directory!
         std::filesystem::create_directories(directoryPath);
-        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
         std::cout << "Created the " << this->getOperation() << " directory: " << directoryPath << std::endl;
     }
 }
 
 // This method will write the outputs of Mapper Operations - it will return the directory of temp_mapper
 std::string FileProcessor::writeMapperOutputs() {
-    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
     std::cout << "Proceeding to write Mapper data output to file system...." << std::endl;
     // Declare variable mapData
     // Key -> FileName
@@ -245,7 +240,6 @@ std::string FileProcessor::writeMapperOutputs() {
         rootTempDirectory = fileDirectory + "temp_mapper/";
         std::string baseFileName = fullyQualifiedFileName.substr(fullyQualifiedFileName.rfind('/') + 1);
         std::string tempDirectory = rootTempDirectory + baseFileName + "/";
-        // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
         std::cout << "Operating on Mapper output from " << fullyQualifiedFileName << std::endl;
         std::cout << "Originating directory: " << fileDirectory << std::endl;
         std::cout << "Creating a temp directory to host mapper output: " << tempDirectory << std::endl;
@@ -279,7 +273,6 @@ std::string FileProcessor::writeMapperOutputs() {
 
 // This method will write the outputs of Shuffle Operations - it will return the directory of temp_shuffler
 std::string FileProcessor::writeShuffleOutputs() {
-    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
     std::cout << "Proceeding to write Shuffle data output to file system...." << std::endl;
     // Shuffle data
     std::vector<std::map<std::string, std::map<std::string, size_t>>> shuffleData = this->getShufflerData();
@@ -296,7 +289,6 @@ std::string FileProcessor::writeShuffleOutputs() {
             // We need to check if directory exists. if it doesn't - create the directory, else don't do anything
             // Creating shuffle directory if shuffle directory is not there already
             this->createDirectory(shuffleDirectory);
-            // @Hal, @Abraham - please log this! TODO! - should be pushed to log files
             std::cout << "Proceeding to create " << shufflePartitionDetails.first << std::endl;
             // declare an ostream
             std::ofstream outputFile;
@@ -318,7 +310,6 @@ std::string FileProcessor::writeShuffleOutputs() {
 
 // This method will write the outputs of Reducer Operations - it will return the directory of final_output
 std::string FileProcessor::writeReduceOutputs() {
-    // This should be a log property - @Hal and @Abe - TODO! - should be pushed to log files
     std::cout << "Proceeding to write reducer data output to file system...." << std::endl;
     // Reducer data
     std::vector<std::map<std::string, std::map<std::string, size_t>>> reduceData = this->getReducerData();
@@ -335,7 +326,6 @@ std::string FileProcessor::writeReduceOutputs() {
             // We need to check if directory exists. if it doesn't - create the directory, else don't do anything
             // Creating shuffle directory if shuffle directory is not there already
             this->createDirectory(reduceFileDir);
-            // @Hal, @Abraham - please log this! TODO! - should be pushed to log files
             std::cout << "Proceeding to create " << reduceFile.first << std::endl;
             // declare an ostream
             std::ofstream outputFile;

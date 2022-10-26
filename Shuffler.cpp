@@ -49,7 +49,6 @@ std::map<std::string, std::map<std::string, size_t>> Shuffler::shuffleFile(const
     std::filesystem::path p(fullyQualifiedFile);
     // Do the following only if the file exists in the file system!
     if(std::filesystem::exists(p)){
-        // Please log! - @Hal, @Abraham - TODO
         std::cout << "Shuffling file - " << fullyQualifiedFile << std::endl;
         // Create temp objects
         std::map<std::string, size_t> tempShuffle;
@@ -85,7 +84,6 @@ std::map<std::string, std::map<std::string, size_t>> Shuffler::shuffleFile(const
         // we will simply attach it to the desired shuffle file and save the result to singlePartitionShuffle
         singlePartitionShuffle.insert({fullyQualifiedShuffleFile, tempShuffle});
     } else {
-        // TODO - @Hal, @Abraham - please log!
         std::cout << "** Warning! ** Input file: " << fullyQualifiedFile << "doesn't exist in the file system!" << std::endl;
     }
     // return the singlePartitionShuffle for downstream processing
@@ -128,7 +126,6 @@ std::vector<std::map<std::string, std::map<std::string, size_t>>> Shuffler::shuf
             }
         }
     } else {
-        // @Hal, @Abraham - please log - TODO!
         std::cout << "**Warning** directory path " << this->getMapOutputDirectory() << " is empty!" << std::endl;
     }
     // return object for downstream processing
