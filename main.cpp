@@ -64,6 +64,44 @@ void runOperations(const std::string &input_directory){
     }
 }
 
+// file Directory checks
+std::vector<std::string> fileDirectoryChecks(const std::string &directory1, const std::string &directory2){
+    // Map containing input files in directory1
+    std::map<std::string, int> dir1MapFiles;
+    // Vector containing files that don't exist
+    std::vector<std::string> filesDontExist;
+    // let's iterate over the directory1
+    for(const auto &entry: std::filesystem::directory_iterator(directory1)){
+        if(std::filesystem::is_regular_file(entry)){
+            std::string fileDirectory = entry.path().string().substr(0, entry.path().string().rfind('/') + 1);
+            std::string baseFileName = entry.path().string().substr(entry.path().string().rfind('/') + 1);
+            dir1MapFiles.insert({baseFileName,1});
+        }
+    }
+    // check if directory2 is present ...
+    // Let's check if that output directory is there!
+    if(!std::filesystem::is_directory(directory2)){
+        throw std::runtime_error("Output Directory not found!: " + directory2 );
+    } else {
+        // continue
+        for(const auto &entry: std::filesystem::directory_iterator(directory2)){
+            if(std::filesystem::is_regular_file(entry)){
+                std::string fileDirectory = entry.path().string().substr(0, entry.path().string().rfind('/') + 1);
+                std::string baseFileName = entry.path().string().substr(entry.path().string().rfind('/') + 1);
+                // Let's create an iterator that will check tempShuffle for the token
+                auto mapItr = dir1MapFiles.find(baseFileName);
+                // Check if iterator was exhausted
+                if (mapItr == dir1MapFiles.end()) {
+                    // if parsedToken was not found! - lets create a entry in filesDontExist vector
+                    filesDontExist.push_back(baseFileName);
+                }
+            }
+        }
+    }
+    // return filesDontExist vector
+    return filesDontExist;
+}
+
 // Overarching function that will perform Map reduce operations
 void mapReduceWorkflow(const std::string &input_directory){
     // Creating an object using FileProcessor
@@ -114,8 +152,15 @@ void mapReduceWorkflow(const std::string &input_directory){
 
     std::cout << "Output data has been written to " << outputDirectory << std::endl;
 
-    // Let's create a SUCCESS file in the output directory to signify completion of operations
-    std::ofstream successFile;
-    successFile.open(outputDirectory + "/" + "SUCCESS.ind");
-    successFile.close();
+    std::vector<std::string> fileDontExist1to2 = fileDirectoryChecks(input_directory, outputDirectory);
+    std::vector<std::string> fileDontExist2to1 = fileDirectoryChecks(outputDirectory, input_directory);
+
+// Create a SUCCESS indicator if filesDontExist vector is empty
+    if(fileDontExist1to2.empty() && fileDontExist2to1.empty()){
+        std::ofstream successFile;
+        successFile.open(outputDirectory + "/" + "SUCCESS.ind");
+        successFile.close();
+    } else {
+        throw std::runtime_error("There are missing files!");
+    }
 }
