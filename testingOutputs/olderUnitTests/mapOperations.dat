@@ -1,0 +1,347 @@
+/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare
+input
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Love'sLabourLost.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Winter'sTale.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerchantOfVenice.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwoGentlemenOfVerona.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheComedyOfErrors.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MeasureForMeasure.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MuchAdoAboutNothing.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/All'sWellThatEndsWell.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AMidSummerNightsDream.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TamingOfTheShrew.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AsYouLIkeIte.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Cymbeline.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/PericlesPrinceOfTyre.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerryWivesOfWindsor.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTempest.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwelthNight.txt"
+"/home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TroilusAndCressida .txt"
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Love'sLabourLost.txt has 4145 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Love'sLabourLost.txt
+Number of lines: 4145
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Winter'sTale.txt has 4347 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Winter'sTale.txt
+Number of lines: 4347
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerchantOfVenice.txt has 3555 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerchantOfVenice.txt
+Number of lines: 3555
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwoGentlemenOfVerona.txt has 3316 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwoGentlemenOfVerona.txt
+Number of lines: 3316
+Number of lines per partition: 500
+NUmber of partitions per file: 7
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheComedyOfErrors.txt has 2678 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheComedyOfErrors.txt
+Number of lines: 2678
+Number of lines per partition: 500
+NUmber of partitions per file: 6
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MeasureForMeasure.txt has 4037 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MeasureForMeasure.txt
+Number of lines: 4037
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MuchAdoAboutNothing.txt has 3786 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MuchAdoAboutNothing.txt
+Number of lines: 3786
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/All'sWellThatEndsWell.txt has 4046 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/All'sWellThatEndsWell.txt
+Number of lines: 4046
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AMidSummerNightsDream.txt has 2932 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AMidSummerNightsDream.txt
+Number of lines: 2932
+Number of lines per partition: 500
+NUmber of partitions per file: 6
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TamingOfTheShrew.txt has 3854 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TamingOfTheShrew.txt
+Number of lines: 3854
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AsYouLIkeIte.txt has 3659 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AsYouLIkeIte.txt
+Number of lines: 3659
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Cymbeline.txt has 4846 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Cymbeline.txt
+Number of lines: 4846
+Number of lines per partition: 500
+NUmber of partitions per file: 10
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/PericlesPrinceOfTyre.txt has 3431 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/PericlesPrinceOfTyre.txt
+Number of lines: 3431
+Number of lines per partition: 500
+NUmber of partitions per file: 7
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerryWivesOfWindsor.txt has 4046 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerryWivesOfWindsor.txt
+Number of lines: 4046
+Number of lines per partition: 500
+NUmber of partitions per file: 9
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTempest.txt has 3160 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTempest.txt
+Number of lines: 3160
+Number of lines per partition: 500
+NUmber of partitions per file: 7
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwelthNight.txt has 3717 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwelthNight.txt
+Number of lines: 3717
+Number of lines per partition: 500
+NUmber of partitions per file: 8
+The file /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TroilusAndCressida .txt has 5047 lines.
+Properties for /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TroilusAndCressida .txt
+Number of lines: 5047
+Number of lines per partition: 500
+NUmber of partitions per file: 11
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AMidSummerNightsDream.txt
+The data has 6 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 432 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/All'sWellThatEndsWell.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 46 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AsYouLIkeIte.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 159 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Cymbeline.txt
+The data has 10 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 500 records
+Partition#9 has 346 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Love'sLabourLost.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 145 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MeasureForMeasure.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 37 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MuchAdoAboutNothing.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 286 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/PericlesPrinceOfTyre.txt
+The data has 7 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 431 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TamingOfTheShrew.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 354 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheComedyOfErrors.txt
+The data has 6 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 178 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerchantOfVenice.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 55 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerryWivesOfWindsor.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 46 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTempest.txt
+The data has 7 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 160 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwelthNight.txt
+The data has 8 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 217 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwoGentlemenOfVerona.txt
+The data has 7 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 316 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TroilusAndCressida .txt
+The data has 11 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 500 records
+Partition#9 has 500 records
+Partition#10 has 47 records
+Mapping data from: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Winter'sTale.txt
+The data has 9 partitions.
+Partition#0 has 500 records
+Partition#1 has 500 records
+Partition#2 has 500 records
+Partition#3 has 500 records
+Partition#4 has 500 records
+Partition#5 has 500 records
+Partition#6 has 500 records
+Partition#7 has 500 records
+Partition#8 has 347 records
+Proceeding to write Mapper data output to file system....
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AMidSummerNightsDream.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/AMidSummerNightsDream.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/AMidSummerNightsDream.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/All'sWellThatEndsWell.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/All'sWellThatEndsWell.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/AsYouLIkeIte.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/AsYouLIkeIte.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/AsYouLIkeIte.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Cymbeline.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/Cymbeline.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/Cymbeline.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Love'sLabourLost.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/Love'sLabourLost.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/Love'sLabourLost.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MeasureForMeasure.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/MeasureForMeasure.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/MeasureForMeasure.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/MuchAdoAboutNothing.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/MuchAdoAboutNothing.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/PericlesPrinceOfTyre.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/PericlesPrinceOfTyre.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TamingOfTheShrew.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TamingOfTheShrew.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TamingOfTheShrew.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheComedyOfErrors.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheComedyOfErrors.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheComedyOfErrors.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerchantOfVenice.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheMerchantOfVenice.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheMerchantOfVenice.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheMerryWivesOfWindsor.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheMerryWivesOfWindsor.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTempest.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheTempest.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheTempest.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwelthNight.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheTwelthNight.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheTwelthNight.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TheTwoGentlemenOfVerona.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TheTwoGentlemenOfVerona.txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/TroilusAndCressida .txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TroilusAndCressida .txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/TroilusAndCressida .txt/
+Operating on Mapper output from /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/Winter'sTale.txt
+Originating directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/
+Creating a temp directory to host mapper output: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/Winter'sTale.txt/
+Created the temp directory: /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/Winter'sTale.txt/
+Output of Mapper operations have been written to /home/sakkammadam/Documents/syr/cse687/projects/input_files/shakespeare/temp_mapper/
