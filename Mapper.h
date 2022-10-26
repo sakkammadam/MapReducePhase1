@@ -9,7 +9,6 @@
 #include <tuple>
 #include <vector>
 #include <map>
-#include <boost/algorithm/string.hpp>
 
 class Mapper {
 // Private data members

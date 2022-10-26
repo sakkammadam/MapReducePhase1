@@ -9,7 +9,6 @@
 #include <vector>
 #include <map>
 #include <tuple>
-#include <boost/algorithm/string.hpp>
 
 // Default constructor
 Mapper::Mapper(){
